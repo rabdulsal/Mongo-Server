@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const authenticate = require('../middleware/authenticate');
 
-router.post('/private', authenticate, (req, res) => {
+router.get('/private', authenticate, (req, res) => {
   const obj = {
     message: 'This is a secret ROUTE',
     secret: 'YOU MAY PASS',

@@ -1,11 +1,9 @@
 const mongoose = require('mongoose');
-const mongoConfigs = require('../private/mongo_configs');
+const { db_username, db_password } = require('../private/configs');
 
 mongoose.Promise = global.Promise;
 
-const { username, password } = mongoConfigs.configs;
-
-mongoose.connect(`mongodb://${username}:${password}@ds121312.mlab.com:21312/react-native-auth`)
+mongoose.connect(`mongodb://${db_username}:${db_password}@ds121312.mlab.com:21312/react-native-auth`)
 .then(() => console.log('DB connected'))
 .catch(err => console.log(err));
 
